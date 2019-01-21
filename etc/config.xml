@@ -4,6 +4,7 @@
         <catalog_price_decimal>
             <general>
                 <price_precision>2</price_precision>
+                <price_display_decimals>2</price_display_decimals>
             </general>
         </catalog_price_decimal>
     </default>

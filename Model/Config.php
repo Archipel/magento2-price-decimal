@@ -16,6 +16,9 @@ class Config implements ConfigInterface
     const XML_PATH_PRICE_PRECISION
         = 'catalog_price_decimal/general/price_precision';
 
+    const XML_PATH_PRICE_DISPLAY_DECIMALS
+        = 'catalog_price_decimal/general/price_display_decimals';
+
     const XML_PATH_CAN_SHOW_PRICE_DECIMAL
         = 'catalog_price_decimal/general/can_show_decimal';
 
@@ -81,5 +84,9 @@ class Config implements ConfigInterface
     public function getPricePrecision()
     {
         return $this->getValueByPath(self::XML_PATH_PRICE_PRECISION, 'store');
+    }
+
+    public function getPriceDisplayDecimals() {
+        return $this->getValueByPath(self::XML_PATH_PRICE_DISPLAY_DECIMALS, 'store');
     }
 }

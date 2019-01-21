@@ -22,7 +22,7 @@ class OrderPlugin extends PriceFormatPluginAbstract
         //is enabled
         if ($this->getConfig()->isEnable()) {
             //change the precision
-            $args[1] = $this->getPricePrecision();
+            $args[1] = $this->getPriceDisplayDecimals();
         }
 
         return $args;

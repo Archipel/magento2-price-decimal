@@ -45,10 +45,6 @@ class ConfigPlugin {
                 ORDER BY
                     TABLE_SCHEMA, TABLE_NAME"
         );
-        if(false && count($columns) > 0) {
-            var_dump($dbname, $columns);
-            die();
-        }
         foreach($columns as $c){
             $query = "ALTER TABLE `$dbname`.`{$c['TABLE_NAME']}` CHANGE COLUMN `{$c['COLUMN_NAME']}` `{$c['COLUMN_NAME']}` DECIMAL(65,$decimalPlaces) "
                     .($c['IS_NULLABLE'] == 'YES' ? 'NULL' : 'NOT NULL')

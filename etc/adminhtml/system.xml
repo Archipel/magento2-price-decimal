@@ -19,7 +19,10 @@
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
                 <field id="price_precision" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
-                    <label>Decimal Length</label>
+                    <label>Decimal Precision</label>
+                </field>
+                <field id="price_display_decimals" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Amount of Decimals to display</label>
                     <depends>
                         <field id="*/*/enable">1</field>
                     </depends>

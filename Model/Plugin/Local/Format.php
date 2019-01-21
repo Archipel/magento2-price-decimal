@@ -23,7 +23,7 @@ class Format extends PriceFormatPluginAbstract
      */
     public function afterGetPriceFormat($subject, $result)
     {
-        $precision = $this->getPricePrecision();
+        $precision = $this->getPriceDisplayDecimals();
 
         if ($this->getConfig()->isEnable()) {
             $result['precision'] = $precision;

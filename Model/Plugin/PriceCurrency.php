@@ -24,7 +24,7 @@ class PriceCurrency extends PriceFormatPluginAbstract
                 $args[1] = true;
             }
             // Precision argument
-            $args[2] = $this->getPricePrecision();
+            $args[2] = $this->getPriceDisplayDecimals();
         }
 
         return $args;
@@ -63,7 +63,7 @@ class PriceCurrency extends PriceFormatPluginAbstract
         if ($this->getConfig()->isEnable()) {
             // add the optional args
             $args[1] = isset($args[1])? $args[1] : null;
-            $args[2] = intval($this->getPricePrecision());
+            $args[2] = intval($this->getPriceDisplayDecimals());
         }
 
         return $args;
