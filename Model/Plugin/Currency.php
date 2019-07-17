@@ -24,7 +24,12 @@ class Currency extends PriceFormatPluginAbstract
         ...$arguments
     ) {
         if ($this->getConfig()->isEnable()) {
-            $arguments[1]['precision'] = $subject->getPriceDisplayDecimals();
+            if(isset($arguments[1]['precision']) && $arguments[1]['precision'] == 'max'){
+                $arguments[1]['precision'] = strlen(strstr(strval(floatval($arguments[0])), "."))-1;
+            }
+            else {
+                $arguments[1]['precision'] = $subject->getPriceDisplayDecimals();
+            }
         }
         return $arguments;
     }
