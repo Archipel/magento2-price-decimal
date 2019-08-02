@@ -25,7 +25,13 @@ class Currency extends PriceFormatPluginAbstract
     ) {
         if ($this->getConfig()->isEnable()) {
             if(isset($arguments[1]['precision']) && $arguments[1]['precision'] == 'max'){
-                $arguments[1]['precision'] = strlen(strstr(strval(floatval($arguments[0])), "."))-1;
+                $decimals = strstr(strval(floatval($arguments[0])), ".");
+                if($decimals) {
+                    $arguments[1]['precision'] = strlen($decimals) - 1;
+                }
+                else{
+                    $arguments[1]['precision'] = 0;
+                }
             }
             else {
                 $arguments[1]['precision'] = $subject->getPriceDisplayDecimals();
